@@ -1,0 +1,7 @@
+language: go
+
+install: go get -t ./...
+
+notifications:
+  email:
+    on_success: never
