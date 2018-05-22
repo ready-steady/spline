@@ -15,7 +15,7 @@ func TestCubicCompute1D2P(t *testing.T) {
 	ynew := []float64{2.8960723750139596e+00, 3.0103662977992611e+00}
 
 	cubic := NewCubic(x, y)
-	assert.EqualWithin(cubic.Evaluate(xnew), ynew, 1e-15, t)
+	assert.Close(cubic.Evaluate(xnew), ynew, 1e-15, t)
 }
 
 func TestCubicCompute1D3P(t *testing.T) {
@@ -25,7 +25,7 @@ func TestCubicCompute1D3P(t *testing.T) {
 	ynew := []float64{2.5688178059174831e+00, 2.9828931685532520e+00}
 
 	cubic := NewCubic(x, y)
-	assert.EqualWithin(cubic.Evaluate(xnew), ynew, 1e-15, t)
+	assert.Close(cubic.Evaluate(xnew), ynew, 1e-15, t)
 }
 
 func TestCubicCompute1DNP(t *testing.T) {
@@ -65,7 +65,7 @@ func TestCubicCompute1DNP(t *testing.T) {
 	}
 
 	cubic := NewCubic(x, y)
-	assert.EqualWithin(cubic.Evaluate(xnew), ynew, 1e-15, t)
+	assert.Close(cubic.Evaluate(xnew), ynew, 1e-15, t)
 }
 
 func TestCubicCompute2D2P(t *testing.T) {
@@ -81,7 +81,7 @@ func TestCubicCompute2D2P(t *testing.T) {
 	}
 
 	cubic := NewCubic(x, y)
-	assert.EqualWithin(cubic.Evaluate(xnew), ynew, 1e-15, t)
+	assert.Close(cubic.Evaluate(xnew), ynew, 1e-15, t)
 }
 
 func TestCubicCompute2D3P(t *testing.T) {
@@ -98,7 +98,7 @@ func TestCubicCompute2D3P(t *testing.T) {
 	}
 
 	cubic := NewCubic(x, y)
-	assert.EqualWithin(cubic.Evaluate(xnew), ynew, 2e-15, t)
+	assert.Close(cubic.Evaluate(xnew), ynew, 2e-15, t)
 }
 
 func TestCubicCompute2DNP(t *testing.T) {
@@ -172,7 +172,7 @@ func TestCubicCompute2DNP(t *testing.T) {
 	}
 
 	cubic := NewCubic(x, y)
-	assert.EqualWithin(cubic.Evaluate(xnew), ynew, 2e-15, t)
+	assert.Close(cubic.Evaluate(xnew), ynew, 2e-15, t)
 }
 
 func BenchmarkNewCubic1D(b *testing.B)      { benchmarkNewCubic(10000, 1, b) }
